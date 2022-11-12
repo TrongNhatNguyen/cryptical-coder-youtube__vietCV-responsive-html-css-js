@@ -1,0 +1,402 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Tạo biến */
+:root {
+    --bg-black-500: #f2f2fc;
+    --bg-black-100: #fdf9ff;
+    --bg-black-50: #e8dfec;
+    --text-black-900: #302e4d;
+    --text-black-700: #504e70;
+
+    --width-aside: 270px;
+}
+
+@font-face {
+    font-family: 'Nunito-Regular';
+    src: local('Nunito-Regular'), url('./../fonts/Nunito/static/Nunito-Regular.ttf');
+}
+@font-face {
+    font-family: 'IslandMoments-Regular';
+    src: local('IslandMoments-Regular'), url('./../fonts/Island_Moments/IslandMoments-Regular.ttf');
+}
+@font-face {
+    font-family: 'Pacifico-Regular';
+    src: local('Pacifico-Regular'), url('./../fonts/Pacifico/Pacifico-Regular.ttf');
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    font-family: 'Nunito-Regular';
+    font-size: 18px;
+    color: rgb(22, 22, 22);
+    /* background: linear-gradient(50deg, var(--color-gradient-a), var(--color-gradient-b)); */
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline-width: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+input {
+    line-height: normal;
+}
+label,
+button {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+
+/* ============================= */
+.main-container {
+    width: 100%;
+    min-height: 100%;
+}
+
+/* === [ Menu dọc sidebar ] === */
+.aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--width-aside);
+    height: 100%;
+    padding: 30px;
+    background-color: var(--bg-black-100);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+.aside .logo {
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.aside .logo a {
+    position: relative;
+    color: var(--text-black-900);
+    font-family: 'IslandMoments-Regular', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    padding: 5px 15px;
+
+    /* tạo màu nền cho chữ */
+    background: linear-gradient(80deg, var(--skin-color), #000000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.aside .logo a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 10%;
+    height: 10px;
+    border-bottom: 3px solid var(--skin-color);
+    border-left: 3px solid var(--skin-color);
+}
+
+/* == [ Nút aside ] == */
+.aside .nav-toggler {
+    position: fixed;
+    left: 300px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 5px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+.aside .nav-toggler span {
+    position: relative;
+    display: inline-block;
+    height: 2px;
+    width: 18px;
+    background: var(--skin-color);
+}
+.aside .nav-toggler span::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: var(--skin-color);
+}
+.aside .nav-toggler span::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: var(--skin-color);
+}
+
+/* == [ DANH MỤC ] == */
+.aside .nav {
+    list-style: none;
+    margin-top: 50px;
+}
+.aside .nav li {
+    display: flexbox;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.aside .nav li a {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-black-900);
+    padding: 15px 15px;
+    border-bottom: 1px solid var(--bg-black-50);
+    transition: 0.5s;
+}
+.aside .nav li a:hover {
+    /* box-shadow: <lệch trái-phải> <lệch trên-dưới> <độ đậm nhạt> <độ lan toả> */
+    box-shadow: 5px 8px 10px -7px rgba(0, 0, 0, 0.4);
+}
+.aside .nav li a.active {
+    color: var(--skin-color);
+    /* box-shadow: <lệch trái-phải> <lệch trên-dưới> <độ đậm nhạt> <độ lan toả> */
+    box-shadow: 5px 8px 10px -7px rgba(0, 0, 0, 0.4);
+}
+.aside .nav li a i {
+    margin-right: 20px;
+}
+
+/* === [ NỘI DUNG CHÍNH ] === */
+section {
+    position: fixed;
+    top: 0;
+    left: var(--width-aside);
+    right: 0;
+    min-height: 100vh;
+    display: block;
+    background: var(--bg-black-500);
+    opacity: 1;
+    z-index: 0;
+}
+.container {
+    --grid-around: 30px;
+
+    margin: auto;
+    max-width: calc(100% - calc(2 * var(--grid-around)));
+}
+.row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(calc(-1 * var(--grid-around)) + 20px);
+    margin-right: calc(calc(-1 * var(--grid-around)) + 20px);
+}
+.hidden {
+    display: none;
+}
+.padd-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* tiêu đề */
+.section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    /* background-color: rgb(205, 235, 225); */
+}
+.section-title h2 {
+    position: relative;
+    font-size: 40px;
+    color: var(--text-black-900);
+    font-weight: 700;
+}
+.section-title h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    background: var(--skin-color);
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 25px;
+    height: 4px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    background: var(--skin-color);
+}
+
+/* == Home page == */
+.home {
+    display: flex;
+    align-items: center;
+    color: var(--text-black-900);
+}
+.home-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.home-info h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+.home-info h3 span.name {
+    font-family: 'Pacifico-Regular';
+    font-weight: 400;
+    color: var(--skin-color);
+}
+.home-info h3 span.typing {
+    color: var(--skin-color);
+}
+.home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+.btn {
+    color: #fdf9ff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 35px;
+    border-radius: 30px;
+    background: var(--skin-color);
+}
+
+/* ảnh đại diện */
+.home-avatar {
+    position: relative;
+    text-align: center;
+    flex: 0 0 40%;
+    width: 40%;
+    height: 100%;
+    padding: 0 20px;
+    /* background-color: var(--bg-black-50); */
+}
+
+.home-avatar img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border-radius: 7px;
+}
+.home-avatar::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    border-top: 10px solid var(--skin-color);
+    border-left: 10px solid var(--skin-color);
+    border-top-left-radius: 6px;
+}
+.home-avatar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    width: 80px;
+    height: 80px;
+    border-right: 10px solid var(--skin-color);
+    border-bottom: 10px solid var(--skin-color);
+    border-bottom-right-radius: 6px;
+}
+
+/* == About page == */
+.about {
+    color: var(--text-black-700);
+}
+.about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* background: burlywood; */
+}
+.about-content .about-text {
+    margin-bottom: 30px;
+}
+.about-content .about-text h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+.about-content .about-text h3 span {
+    color: var(--skin-color);
+}
+
+.about-content .personal-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+    /* background-color: antiquewhite; */
+}
+.about-content .personal-info .info-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.about-content .personal-info .info-item p {
+    display: inline-block;
+    font-weight: 600;
+    padding: 15px 0;
+    font-size: 16px;
+    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-black-50);
+}
+.about-content .personal-info .info-item p span {
+    color: var(--text-black-700);
+}
+
+/* nút download */
+.about-content .personal-info .buttons {
+    margin: 40px 0;
+}
+.about-content .personal-info .buttons a.downl-cv {
+    background-color: rgb(50, 50, 165) !important;
+}
+
+/*  Kỹ năng */
+.about-content .skills {
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+.about-content .skills .skill-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 10px 0;
+}
