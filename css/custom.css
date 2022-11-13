@@ -194,12 +194,12 @@ a {
 
 /* === [ NỘI DUNG CHÍNH ] === */
 section {
-    position: fixed;
+    position: relative;
     top: 0;
     left: var(--width-aside);
-    right: 0;
-    min-height: 100vh;
     display: block;
+    max-width: calc(100vw - var(--width-aside) - 20px);
+    min-height: 100vh;
     background: var(--bg-black-500);
     opacity: 1;
     z-index: 0;
@@ -218,7 +218,7 @@ section {
     margin-right: calc(calc(-1 * var(--grid-around)) + 20px);
 }
 .hidden {
-    display: none;
+    display: none !important;
 }
 .padd-15 {
     padding-left: 15px;
@@ -286,7 +286,7 @@ section {
 }
 .home-info p {
     margin-bottom: 70px;
-    font-size: 20px;
+    font-size: 19px;
     color: var(--text-black-700);
 }
 .btn {
@@ -346,9 +346,11 @@ section {
 .about-content {
     flex: 0 0 100%;
     max-width: 100%;
+    padding-bottom: 15px;
     /* background: burlywood; */
 }
 .about-content .about-text {
+    font-size: 19px;
     margin-bottom: 30px;
 }
 .about-content .about-text h3 {
@@ -362,23 +364,25 @@ section {
 }
 
 .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 63%;
+    max-width: 63%;
     /* background-color: antiquewhite; */
 }
 .about-content .personal-info .info-item {
+    display: inline-block;
     flex: 0 0 50%;
     max-width: 50%;
 }
 .about-content .personal-info .info-item p {
-    display: inline-block;
+    width: 100%;
+    font-size: 18px;
     font-weight: 600;
     padding: 15px 0;
-    font-size: 16px;
     color: var(--text-black-900);
     border-bottom: 1px solid var(--bg-black-50);
 }
 .about-content .personal-info .info-item p span {
+    font-weight: 300;
     color: var(--text-black-700);
 }
 
@@ -390,13 +394,92 @@ section {
     background-color: rgb(50, 50, 165) !important;
 }
 
-/*  Kỹ năng */
+/*  thanh Kỹ năng */
 .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 37%;
+    max-width: 37%;
 }
 .about-content .skills .skill-item {
     flex: 0 0 100%;
     max-width: 100%;
+    margin-bottom: 15px;
+}
+.about-content .skills .skill-item:last-child {
+    margin-bottom: 0;
+}
+.about-content .skills .skill-item h5 {
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+.about-content .skills .skill-item .progress {
+    position: relative;
+    background: var(--bg-black-50);
+    width: 100%;
+    height: 7px;
+    border-radius: 5px;
+}
+.about-content .skills .skill-item .progress .progress-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 7px;
+    background: var(--skin-color);
+}
+.about-content .skills .skill-item .progress .skill-percent {
+    position: absolute;
+    top: -30px;
+    right: 0;
+}
+
+/* mốc tgian + kinh nghiệm */
+.about-content .education {
+    margin-top: 40px;
+    /* background-color: #cccae7; */
+}
+.education .title {
+    margin-bottom: 20px;
+}
+.education .timeline {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.education .timeline .timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 8px;
+    /* box-shadow: <lệch trái-phải> <lệch trên-dưới> <độ đậm nhạt> <độ lan toả> */
+    box-shadow: 8px 8px 10px -7px rgba(0, 0, 0, 0.9);
+}
+.education .timeline .timeline-item {
+    position: relative;
+    padding: 20px 30px;
+    color: #000;
+}
+.education .timeline .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 17%;
+    bottom: 0;
+    width: 60%;
+    height: 1px;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+.education .timeline .timeline-item:last-child::before {
+    border-bottom: unset;
+}
+.education .timeline .timeline-item p {
+    color: var(--text-black-900);
     margin: 10px 0;
+}
+
+.education .experience {
+    flex: 0 0 50%;
+    max-width: 50%;
+    background-color: rgb(221, 215, 132);
 }
