@@ -460,7 +460,6 @@ a {
 .about .skills {
     flex: 0 0 35%;
     max-width: 35%;
-    background-color: #7b79a0;
 }
 .skills .skill-item {
     flex: 0 0 100%;
@@ -843,6 +842,11 @@ a {
     RESPONSIVE IPAD DỌC
     -------------------------*/
     @media (max-width: 768px) {
+        .padd-l-15,
+        .padd-r-15 {
+            padding: unset;
+        }
+
         /*-----------------------
         TRANG THÔNG TIN - ABOUT
         -----------------------*/
@@ -878,11 +882,16 @@ a {
             --global-mg-padd-spacing: 1rem; /* ~ 16px, khoảng cách magin, padd mặc định */
             --outline-spacing: 1.25rem; /* ~ 20px, khoảng cách viền ngoài cùng */
         }
+        .full-width {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
         .btn {
             font-size: 1rem; /* ~ 16px */
             font-weight: 600;
             padding: 15px;
         }
+
         /*-----------------------
         TRANG GIỚI THIỆU - HOME
         -----------------------*/
