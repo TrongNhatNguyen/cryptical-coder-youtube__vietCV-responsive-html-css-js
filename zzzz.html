@@ -1,169 +1,48 @@
-<!-- ABOUT - Kỹ năng -->
-<div class="row">
-    <div class="about-content padd-grid-15">
-        <div class="row">
-            <div class="about-text padd-grid-15">
-                <h3>Tôi là Nguyễn Trọng Nhật và là một <span>lập trình viên website</span></h3>
-                <p>
-                    Chuyên môn của tôi là lập trình Website cả về mảng front-end lẫn back-end, làm việc với Cơ sở dữ
-                    liệu, thiết kế và chỉnh sửa logo, banner, bố cục giao diện cơ bản với Photoshop và một số chức năng
-                    khác...
-                </p>
-                <p>
-                    Tôi hy vọng tìm kiếm một vị trí phù hợp tại công ty có các dự án với độ thử thách cao, nơi là hiệu
-                    suất làm việc được công nhận đáp ứng được nhu cầu làm việc của Quý công ty.
-                </p>
-            </div>
-        </div>
+<script>
+    /* ----------------------
+    LĂN CUỘT CUỘN MƯỢT
+    ------------------------ */
+    var win = $(window),
+        target = $('body'),
+        // tìm thẻ div cần cuộn mượt
+        // wrapper = target.find('> div'), // cuộn cả trang
+        wrapper = target.find('.main-content'),
+        easing = 'ease-out',
+        duration = '500ms', // Tốc độ cuộn mượt ms(millisecond)
+        top = 0,
+        kineticScroll = {
+            _init: function () {
+                if (wrapper.length == 1) {
+                    target.height(wrapper.height());
+                    wrapper.css({
+                        transition: 'transform ' + duration + ' ' + easing,
+                        position: 'fixed',
+                        top: '0',
+                        left: '0',
+                        width: '100%',
+                        padding: '0',
+                        zIndex: '2',
+                    });
 
-        <!-- thông tin cá nhân -->
-        <div class="row">
-            <!-- bảng ttin -->
-            <div class="personal-info padd-grid-15">
-                <div class="row">
-                    <div class="info-item padd-grid-15">
-                        <p>Ngày Sinh : <span>23 / 06 / 2000</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Tuổi : <span>23</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Website : <span>www.hugonhatnguyen.com</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Email : <span>hugodev2306000@gmail.com</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Chứng chỉ : <span>Bằng Cao Đẳng loại Giỏi</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Điện Thoại : <span>0327 485 717</span></p>
-                    </div>
-                    <div class="info-item padd-grid-15">
-                        <p>Thành Phố : <span>TP.Biên Hoà, Đồng nai</span></p>
-                    </div>
-                </div>
+                    win.on({
+                        scroll: function () {
+                            kineticScroll._scroll();
+                        },
+                        resize: function () {
+                            target.height(wrapper.outerHeight());
+                        },
+                    });
 
-                <!-- nút tải -->
-                <div class="row">
-                    <div class="buttons padd-grid-15">
-                        <a href="#" target="_blank" class="btn downl-cv" rel="noopener noreferrer">Download CV</a>
-                        <a href="#" class="btn hire-me" rel="noopener noreferrer"> Trao Đổi Với Tôi </a>
-                    </div>
-                </div>
-            </div>
+                    kineticScroll._scroll();
+                }
+            },
+            _scroll: function () {
+                top = win.scrollTop();
+                wrapper.css('transform', 'translateY(-' + top + 'px)');
+            },
+        };
 
-            <!-- thanh kỹ năng -->
-            <div class="skills padd-grid-15">
-                <div class="row">
-                    <div class="skill-item padd-grid-15">
-                        <h5>HTML & CSS</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 90%"></div>
-                            <div class="skill-percent">95%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item padd-grid-15">
-                        <h5>JAVA SCRIPT</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 80%"></div>
-                            <div class="skill-percent">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item padd-grid-15">
-                        <h5>PHP MVC MySQL</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 75%"></div>
-                            <div class="skill-percent">75%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item padd-grid-15">
-                        <h5>PHP LARAVEL FRAMEWORK</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 60%"></div>
-                            <div class="skill-percent">60%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item padd-grid-15">
-                        <h5>REACJS</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 55%"></div>
-                            <div class="skill-percent">55%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item padd-grid-15">
-                        <h5>PHOTOSHOP</h5>
-                        <div class="progress">
-                            <div class="progress-in" style="width: 40%"></div>
-                            <div class="skill-percent">40%</div>
-                        </div>
-                    </div>
-                    <!-- == -->
-                </div>
-            </div>
-        </div>
-
-        <!-- mốc tgian + kinh nghiệm -->
-        <div class="row">
-            <div class="education padd-grid-15">
-                <div class="row">
-                    <!-- box-trái -->
-                    <div class="timeline padd-grid-15">
-                        <h3 class="title">Học vấn</h3>
-                        <div class="timeline-box">
-                            <!-- list -->
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <h3 class="timeline-calendar"><i class="fa fa-calendar"></i> 09/2018 - 04/2021</h3>
-                                <h4 class="timeline-title">Student Dev Website - FPT Polytechnic</h4>
-                                <div class="timeline-text">
-                                    <p>
-                                        Chịu trách nhiệm làm việc với nhiều dự án, thiết kế các trang web hấp dẫn, tương
-                                        tác hàng ngày với thầy cô và các bạn.
-                                    </p>
-                                    <p>
-                                        Viết HTML-CSS tốt, tương thích với nhiều trình duyệt (cross-browser), biết
-                                        JavaScript căn bản.
-                                    </p>
-                                    <p>Học hỏi và duy trì chức năng Back-end của các trang web.</p>
-                                    <p>Hiểu, xây dựng và quản lý cơ sở dữ liệu.</p>
-                                    <p>Tham gia thảo luận với bạn bè để làm rõ những vấn đề khi làm dự án.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- box-phải -->
-                    <div class="timeline padd-grid-15">
-                        <h3 class="title">kinh nghiệm</h3>
-                        <div class="timeline-box">
-                            <!-- list -->
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <h3 class="timeline-calendar"><i class="fa fa-calendar"></i> 04/2021 - 08/2021</h3>
-                                <h4 class="timeline-title">Internship Developer - Silkwires Digital Agency</h4>
-                                <div class="timeline-text">
-                                    <p>Được hướng dẫn, chỉ bảo tận tình các kiến thức mới, kỹ năng làm việc nhóm.</p>
-                                    <p>
-                                        Tiếp thu và học hỏi những nền tảng và kinh nghiệm trong môi trường làm làm việc
-                                        thực tế.
-                                    </p>
-                                    <p>
-                                        Tham gia dự án thực tế tại công ty, được phân công và hoàn thành các yêu cầu của
-                                        dự án đúng thời gian.
-                                    </p>
-                                    <p>Làm quen và trao dồi thêm kĩ năng làm việc nhóm, phân chia tiến độ,..</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    if (typeof window.ontouchstart == 'undefined') {
+        kineticScroll._init();
+    }
+</script>

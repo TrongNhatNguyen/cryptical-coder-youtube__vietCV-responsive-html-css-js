@@ -23,7 +23,7 @@
         TẠO BIẾN
 ------------------------*/
 :root {
-    --skin-color-used: var(--skin-color-1);
+    --skin-color-used: var(--skin-color-2);
 
     --text-black-700: #504e70;
     --text-black-900: #302e4d;
@@ -34,7 +34,7 @@
 
     --width-aside: 270px; /* chiều rộng menu danh mục */
     --global-mg-padd-spacing: 1rem; /* ~ 16px, khoảng cách magin, padd mặc định */
-    --outline-spacing: 1.25rem; /* ~ 20px, khoảng cách viền ngoài cùng */
+    --outline-spacing: 1.5625rem; /* ~ 25px, khoảng cách viền ngoài cùng */
 }
 
 body.dark {
@@ -54,6 +54,10 @@ body {
     font-size: 1.25rem; /* ~ 20px */
     color: rgb(22, 22, 22);
     /* background: linear-gradient(50deg, var(--color-gradient-a), var(--color-gradient-b)); */
+
+    /* HIỂN THỊ WEB SAU KHI LOAD XONG TẤT CẢ JS */
+    opacity: 0;
+    transition: all 0.4s ease-out;
 }
 
 input:focus,
@@ -90,11 +94,12 @@ a {
     position: relative;
     top: 0;
     left: var(--width-aside);
+
     display: block;
     max-width: calc(100vw - var(--width-aside));
     min-height: 100vh;
     background: var(--bg-white-medium);
-    opacity: 1;
+
     z-index: 0;
     transition: all 0.1s ease-in;
 }
@@ -226,7 +231,7 @@ a {
     padding: 5px 15px;
 
     /* tạo màu nền cho chữ */
-    background: linear-gradient(80deg, var(--skin-color-used), #000000);
+    background: linear-gradient(80deg, var(--skin-color-used), var(--text-black-700));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -476,7 +481,7 @@ a {
 .skills .skill-item {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .skills .skill-item:last-child {
     margin-bottom: 0;
@@ -530,7 +535,7 @@ a {
     margin-bottom: 20px;
     background: var(--bg-white-light);
     border: 1px solid var(--bg-white-bold);
-    border-radius: 8px;
+    border-radius: 15px;
     /* box-shadow: <lệch trái-phải> <lệch trên-dưới> <độ đậm nhạt> <độ lan toả> */
     box-shadow: 0px 1px 10px -5px rgb(0 0 0 / 0.9);
 }
@@ -697,7 +702,7 @@ a {
 }
 .contact-title .contact-ques {
     color: var(--skin-color-used);
-    font-size: 1.375rem; /* ~ 22px */
+    font-size: 1.5rem; /* ~ 24px */
     margin-bottom: 10px;
 }
 
@@ -774,11 +779,11 @@ a {
 
     font-size: 1.125rem; /* ~ 18px */
     font-family: 'Nunito-Regular';
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-black-700);
     background: var(--bg-white-medium);
 
-    border-radius: 10px;
+    border-radius: 25px;
     border: 1px solid var(--bg-white-bold);
     box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.3), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
         -0.5px -0.5px 0 rgba(255, 255, 255, 1), 0.5px 0.5px 0 rgba(0, 0, 0, 0.15),
@@ -788,7 +793,7 @@ a {
     resize: none; /* tắt kéo rộng khung nhập */
 }
 .form-email .form-group button {
-    font-size: 18px;
+    font-size: 1.125rem;
     background: var(--skin-color-used);
     border: 1px solid var(--bg-white-bold);
 }
@@ -918,6 +923,9 @@ a {
         /*-----------------------
         TRANG GIỚI THIỆU - HOME
         -----------------------*/
+        .home .home-logo-responsive {
+            height: 15vh;
+        }
         .home-info,
         .home-avatar {
             flex: 0 0 100%;
@@ -935,7 +943,7 @@ a {
         }
 
         /*-----------------------
-        TRANG KĨ NĂNG - HOME
+        TRANG KĨ NĂNG - SERVICE
         -----------------------*/
         .service .service-item {
             flex: 0 0 100%;

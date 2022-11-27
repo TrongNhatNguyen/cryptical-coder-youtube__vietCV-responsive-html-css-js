@@ -7,17 +7,17 @@
         <title>Hugo CV - portfotio</title>
         <!-- CSS files -->
         <link rel="stylesheet" href="./css/fontawesome-free-6.2.0-web/css/all.min.css" />
-        <link href="css/custom.css" rel="stylesheet" />
+        <link href="./css/custom.css" rel="stylesheet" />
 
         <!-- CSS đổi màu giao diện - switcher -->
-        <link href="css/skin-colors/skin-switcher.css" rel="stylesheet" />
-        <link href="css/skin-colors/color-1.css" rel="stylesheet" />
-        <link href="css/skin-colors/color-2.css" rel="stylesheet" />
-        <link href="css/skin-colors/color-3.css" rel="stylesheet" />
-        <link href="css/skin-colors/color-4.css" rel="stylesheet" />
-        <link href="css/skin-colors/color-5.css" rel="stylesheet" />
+        <link href="./css/skin-colors/skin-switcher.css" rel="stylesheet" />
+        <link href="./css/skin-colors/color-1.css" rel="stylesheet" />
+        <link href="./css/skin-colors/color-2.css" rel="stylesheet" />
+        <link href="./css/skin-colors/color-3.css" rel="stylesheet" />
+        <link href="./css/skin-colors/color-4.css" rel="stylesheet" />
+        <link href="./css/skin-colors/color-5.css" rel="stylesheet" />
     </head>
-    <body>
+    <body class="dark">
         <!-- ===== Main Container Start ==== -->
         <div class="main-container">
             <!-- === MENU DỌC SIDEBAR === -->
@@ -33,27 +33,27 @@
 
                 <ul class="nav">
                     <li>
-                        <a href="#home" class="active" rel="noopener noreferrer">
+                        <a href="#home" class="smooth-scroll active" rel="noopener noreferrer">
                             <i class="fa fa-home"></i><span class="cate-name">Giới Thiệu</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#about" rel="noopener noreferrer">
+                        <a href="#about" class="smooth-scroll" rel="noopener noreferrer">
                             <i class="fa fa-user"></i><span class="cate-name">Thông Tin</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#service" rel="noopener noreferrer">
+                        <a href="#service" class="smooth-scroll" rel="noopener noreferrer">
                             <i class="fa fa-list"></i><span class="cate-name">Kỹ Năng</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#project" rel="noopener noreferrer">
+                        <a href="#project" class="smooth-scroll" rel="noopener noreferrer">
                             <i class="fa fa-briefcase"></i><span class="name">Dự Án</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#contact" rel="noopener noreferrer">
+                        <a href="#contact" class="smooth-scroll" rel="noopener noreferrer">
                             <i class="fa fa-comments"></i><span class="name">Liên Hệ</span>
                         </a>
                     </li>
@@ -63,7 +63,7 @@
             <!-- === PHẦN NỘI DUNG CHÍNH === -->
             <div class="main-content">
                 <!--[ GIỚI THIỆU - Home Section ]  -->
-                <section class="home section padd-b-30">
+                <section class="home section padd-b-30" id="home">
                     <div class="container">
                         <!-- Logo khi ẩn thanh menu -->
                         <div class="home-logo-responsive">
@@ -78,7 +78,7 @@
                                 <h3 class="hello">
                                     Xin chào Nhà Tuyển Dụng, tôi là <span class="name">Nguyễn Trọng Nhật</span>
                                 </h3>
-                                <h3>Tôi là một <span class="typing">lập trình viên website</span></h3>
+                                <h3>Tôi là <span class="typing">...</span></h3>
                                 <div class="intro-text">
                                     <p>
                                         Với hơn 03 năm trao dồi kiến thức qua trường lớp, thực tập, các khoá học online
@@ -111,7 +111,7 @@
                 </section>
 
                 <!--[ THÔNG TIN -About Section ]  -->
-                <section class="about section padd-b-30">
+                <section class="about section padd-b-30" id="about">
                     <div class="container">
                         <!-- tiêu đề -->
                         <div class="row">
@@ -155,7 +155,7 @@
                                     <div class="info-item padd-r-15 full-width">
                                         <p>Chứng chỉ : <span>Bằng Cao Đẳng loại Giỏi</span></p>
                                     </div>
-                                    <div class="info-item padd-l-15">
+                                    <div class="info-item padd-l-15 full-width">
                                         <p>Điện Thoại : <span>0327 485 717</span></p>
                                     </div>
                                     <div class="info-item padd-r-15 full-width">
@@ -212,16 +212,16 @@
                                     <div class="skill-item padd-lr-15">
                                         <h5>REACJS</h5>
                                         <div class="progress">
-                                            <div class="progress-in" style="width: 55%"></div>
-                                            <div class="skill-percent">55%</div>
+                                            <div class="progress-in" style="width: 40%"></div>
+                                            <div class="skill-percent">40%</div>
                                         </div>
                                     </div>
 
                                     <div class="skill-item padd-lr-15">
                                         <h5>PHOTOSHOP</h5>
                                         <div class="progress">
-                                            <div class="progress-in" style="width: 40%"></div>
-                                            <div class="skill-percent">40%</div>
+                                            <div class="progress-in" style="width: 20%"></div>
+                                            <div class="skill-percent">20%</div>
                                         </div>
                                     </div>
                                     <!-- == -->
@@ -305,7 +305,7 @@
                 </section>
 
                 <!--[ KĨ NĂNG - Service Section ]  -->
-                <section class="service section padd-b-30">
+                <section class="service section padd-b-30" id="service">
                     <div class="container">
                         <!-- tiêu đề -->
                         <div class="row">
@@ -404,7 +404,7 @@
                 </section>
 
                 <!--[ DỰ ÁN - Project Section ]  -->
-                <section class="project section padd-b-30">
+                <section class="project section padd-b-30" id="project">
                     <div class="container">
                         <!-- tiêu đề -->
                         <div class="row">
@@ -476,7 +476,7 @@
                 </section>
 
                 <!--[ LIÊN HỆ - Contact Section ]  -->
-                <section class="contact section padd-b-30">
+                <section class="contact section padd-b-30" id="contact">
                     <div class="container">
                         <!-- tiêu đề -->
                         <div class="row">
@@ -637,27 +637,41 @@
 
             <!-- nút ban đêm - ngày -->
             <div class="day-night s-icon">
-                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
             </div>
 
             <h4>Màu Chủ Đề</h4>
             <div class="colors">
                 <span class="alternate-style color-1" skinColor="skin-color-1"></span>
-                <span class="alternate-style color-2" skinColor="skin-color-2"></span>
+                <span class="alternate-style color-2 active" skinColor="skin-color-2"></span>
                 <span class="alternate-style color-3" skinColor="skin-color-3"></span>
                 <span class="alternate-style color-4" skinColor="skin-color-4"></span>
                 <span class="alternate-style color-5" skinColor="skin-color-5"></span>
             </div>
         </div>
 
+        <!-- ================================================ -->
         <!-- JS file -->
-        <script
-            src="./js/jquery-3.6.1.min.js"
-            integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script src="js/custom-script.js"></script>
-        <script src="js/skin-switcher.js"></script>
+        <script src="./js/plugin/jquery-3.6.1.min.js"></script>
+
+        <!-- nút cài đặt + đổi màu giao diện -->
+        <script src="./js/skin-switcher.js"></script>
+
+        <!-- tạo cuộn mượt với easing.js + smooth-scrollbar.js -->
+        <script src="./js/plugin/jquery.easing.min.js"></script>
+        <script src="./js/plugin/smooth-scrollbar.js"></script>
+        <script src="./js/smooth-scroll-custom.js"></script>
+
+        <!-- tạo tự động chạy chữ trang giới thiệu - home -->
+        <script src="./js/plugin/typed.min.js"></script>
+        <script src="./js/run-letters.js"></script>
+        <script>
+            /*----------------------------------------
+            HIỂN THỊ WEB SAU KHI LOAD XONG TẤT CẢ JS
+            -----------------------------------------*/
+            $(document).ready(function () {
+                $('body').css('opacity', 1);
+            });
+        </script>
     </body>
 </html>
