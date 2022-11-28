@@ -270,7 +270,7 @@ a {
 
 .aside .nav-toggler {
     position: absolute;
-    left: calc(var(--width-aside) + 40px);
+    left: calc(var(--width-aside) + 20px);
     top: 15px;
     width: 40px;
     height: 40px;
@@ -308,6 +308,18 @@ a {
     width: 20px;
     height: 2px;
     background: var(--skin-color-used);
+}
+/* hiện ra khi responsive */
+.aside .nav-toggler.open span {
+    background-color: transparent;
+}
+.aside .nav-toggler.open span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.aside .nav-toggler.open span::after {
+    top: 0;
+    transform: rotate(-45deg);
 }
 
 /*---------------------------
@@ -842,8 +854,12 @@ a {
     ---------------------------------*/
     @media (max-width: 1024px) {
         .aside {
-            left: calc(-1 * var(--width-aside) - 20px);
+            transform: translateX(calc(-1 * var(--width-aside)));
         }
+        .aside.open {
+            transform: translateX(0);
+        }
+        /* nút menu */
         .aside .nav-toggler {
             display: flex;
         }
