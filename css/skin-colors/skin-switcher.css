@@ -1,7 +1,7 @@
 .skin-switcher {
     position: fixed;
     top: 60px;
-    right: -1px;
+    right: 0;
     width: 200px;
     height: auto;
     padding: 10px 10px;
@@ -23,7 +23,7 @@
 ------------------*/
 .skin-switcher .s-icon {
     position: absolute;
-    right: 104%;
+    right: 105%;
     width: 40px;
     height: 40px;
     margin-right: 10px;

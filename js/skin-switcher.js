@@ -62,15 +62,24 @@ $(document).ready(function () {
         $('.day-night').children('i').removeClass('fa-sun').addClass('fa-moon');
         $('body').removeClass('dark');
     }
+
+    // ẨN KHUNG CÀI ĐẶT KHI CUỘN SECTION FIXED
+    $('section.section').scroll(function () {
+        if ($('.skin-switcher').hasClass('open-switcher')) {
+            setTimeout(function () {
+                $('.skin-switcher').removeClass('open-switcher');
+            }, 200);
+        }
+    });
 });
-// sessionStorage.clear();
-/*-------------------------
-ẨN KHUNG CÀI ĐẶT KHI CUỘN
--------------------------*/
-$(window).scroll(function () {
-    if ($('.skin-switcher').hasClass('open-switcher')) {
-        setTimeout(function () {
-            $('.skin-switcher').removeClass('open-switcher');
-        }, 200);
-    }
-});
+
+/*--------------------------------
+ẨN KHUNG CÀI ĐẶT KHI CUỘN TRANG
+----------------------------------*/
+// $(window).scroll(function () {
+//     if ($('.skin-switcher').hasClass('open-switcher')) {
+//         setTimeout(function () {
+//             $('.skin-switcher').removeClass('open-switcher');
+//         }, 200);
+//     }
+// });
