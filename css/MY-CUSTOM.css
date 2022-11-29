@@ -382,11 +382,15 @@ a {
     font-weight: 400;
     color: var(--skin-color-used);
 }
-.home-info h3 span.typing {
+.home-info h3.job {
+    height: 60px;
+}
+.home-info h3.job span.typing {
     color: var(--skin-color-used);
 }
 .home-info .intro-text {
-    margin: 50px 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 .home-info p {
     margin-bottom: 10px;
@@ -684,8 +688,8 @@ a {
     margin-bottom: 20px;
 }
 .project .project-item {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
     margin-bottom: 30px;
 }
 .project-item .project-inner {
