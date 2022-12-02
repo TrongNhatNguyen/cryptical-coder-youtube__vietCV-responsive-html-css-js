@@ -18,10 +18,6 @@ $(document).ready(function () {
 
         // lưu màu này vào SESSION
         sessionStorage.setItem('SKIN_COLOR_SELECTED', skinColor);
-
-        // chuyển class active sang ô màu này
-        $('.alternate-style').removeClass('active');
-        $(this).addClass('active');
     });
 
     // sau khi vừa load trang giữ nguyên màu chủ đề đã chọn
@@ -29,8 +25,20 @@ $(document).ready(function () {
         changeSkinColor(skinColor);
     }
 
-    function changeSkinColor(skinColor) {
-        $(':root').css('--skin-color-used', 'var(--' + skinColor + ')');
+    function changeSkinColor(skinColorSelected) {
+        // ĐỔI MÀU TRONG CSS:
+        $(':root').css('--skin-color-used', 'var(--' + skinColorSelected + ')');
+
+        // Lọc tất cả Ô Màu - Đánh dấu Ô Màu vừa chọn
+        var allSkinColor = $('.alternate-style');
+        var index = allSkinColor.length;
+        allSkinColor.each(function (index, el) {
+            // 1. Xoá class active đang tồn tại
+            $(el).hasClass('active') ? $(el).removeClass('active') : '';
+            // 2. hiển thị Ô Màu mới vừa chọn
+            var res = $(el).attr('skinColor');
+            skinColorSelected == res ? $(el).addClass('active') : $(el).removeClass('active');
+        });
     }
 
     /*------------------------------

@@ -9,6 +9,9 @@
         <link href="./css/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet" />
         <link href="./css/MY-CUSTOM.css" rel="stylesheet" />
 
+        <!-- CSS hộp thoại Modal dự án - project -->
+        <link rel="stylesheet" href="css/modal-dialog-custom.css" />
+
         <!-- CSS đổi màu giao diện - switcher -->
         <link href="./css/skin-colors/skin-switcher-custom.css" rel="stylesheet" />
         <link href="./css/skin-colors/color-1.css" rel="stylesheet" />
@@ -89,8 +92,8 @@
                                         Quý công ty luôn ổn định và ngày càng phát triển.
                                     </p>
                                 </div>
-                                <a href="#contact" class="btn hire-me mg-t-30" rel="noopener noreferrer"
-                                    >Trao đổi thêm với tôi</a
+                                <a href="#about" class="btn hire-me mg-t-30" rel="noopener noreferrer"
+                                    >Xem thông tin của tôi</a
                                 >
                             </div>
 
@@ -212,16 +215,16 @@
                                     <div class="skill-item padd-lr-15">
                                         <h5>REACJS</h5>
                                         <div class="progress">
-                                            <div class="progress-in" style="width: 40%"></div>
-                                            <div class="skill-percent">40%</div>
+                                            <div class="progress-in" style="width: 30%"></div>
+                                            <div class="skill-percent">30%</div>
                                         </div>
                                     </div>
 
                                     <div class="skill-item padd-lr-15">
                                         <h5>PHOTOSHOP</h5>
                                         <div class="progress">
-                                            <div class="progress-in" style="width: 20%"></div>
-                                            <div class="skill-percent">20%</div>
+                                            <div class="progress-in" style="width: 40%"></div>
+                                            <div class="skill-percent">40%</div>
                                         </div>
                                     </div>
                                     <!-- == -->
@@ -435,7 +438,7 @@
 
                         <div class="row">
                             <div class="project-item padd-lr-15">
-                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                <a href="#academia-free-template" class="open-project-modal" rel="noopener noreferrer">
                                     <div class="project-inner">
                                         <img src="./images/academia-free-template.jpg" alt="academia" />
                                         <div class="project-info">
@@ -447,7 +450,7 @@
                             </div>
 
                             <div class="project-item padd-lr-15">
-                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                <a href="#Arsha-bootstrap-website" class="open-project-modal" rel="noopener noreferrer">
                                     <div class="project-inner">
                                         <img
                                             src="./images/Arsha-bootstrap-website-template.png"
@@ -462,7 +465,7 @@
                             </div>
 
                             <div class="project-item padd-lr-15">
-                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                <a href="#eflyer-free-template" class="open-project-modal" rel="noopener noreferrer">
                                     <div class="project-inner">
                                         <img src="./images/eflyer-free-template.jpg" alt="eflyer" />
                                         <div class="project-info">
@@ -474,7 +477,7 @@
                             </div>
 
                             <div class="project-item padd-lr-15">
-                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                <a href="#success-free-template" class="open-project-modal" rel="noopener noreferrer">
                                     <div class="project-inner">
                                         <img src="./images/success-free-template.jpg" alt="success" />
                                         <div class="project-info">
@@ -641,6 +644,42 @@
             </div>
         </div>
 
+        <!-- ===== Hộp thoại Modal HIỂN THỊ DỰ ÁN - Project ==== -->
+        <div class="modal">
+            <div class="modal-dialog">
+                <!-- nút đóng -->
+                <div class="btn-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <!-- hình ảnh -->
+                <div class="modal-item">
+                    <div class="modal-image">
+                        <img src="./images/success-free-template.jpg" alt="temlate-image" />
+                    </div>
+                </div>
+
+                <!-- nội dung -->
+                <div class="modal-item">
+                    <div class="modal-content">
+                        <span class="brand">Feature - Brand Desgin</span>
+                        <h3 class="title">success free template</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum tempore</p>
+
+                        <div class="param">
+                            <p>Ngày Tạo - <span>20/11/2022</span></p>
+                            <p>Ngôn ngữ - <span>HTML - CSS</span></p>
+                            <p>Mảng - <span>front-end</span></p>
+                            <p class="text-collapse">
+                                Demo -
+                                <a href="#">hugonhatnguyen.com/success-web</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ===== KHUNG CÀI ĐẶT - Switcher ==== -->
         <div class="skin-switcher">
             <!-- nút cài đặt -->
@@ -666,6 +705,9 @@
         <!-- ================================================ -->
         <!-- JS file -->
         <script src="./js/plugin/jquery-3.6.1.min.js"></script>
+
+        <!-- Hộp thoại Modal hiển thị dự án -->
+        <script src="./js/modal-dialog-custom.js"></script>
 
         <!-- nút cài đặt + đổi màu giao diện -->
         <script src="./js/skin-switcher-seting-custom.js"></script>
